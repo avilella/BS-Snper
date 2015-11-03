@@ -77,6 +77,7 @@ void snpAnalysis(char* bamFileName, char* posFileName, char* methFileName, HashN
 		fprintf(stderr, "Could not open file %s!\n", posFileName);
 		exit(1);
 	}
+	fprintf(posFptr, "##fileformat=VCFv4.2\n");
 	fprintf(posFptr, "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tGENOTYPE\tFREQUENCY\tNumber_of_watson[A,T,C,G]\tNumber_of_crick[A,T,C,G]\tMean_Quality_of_Watson[A,T,C,G]\tMean_Quality_of_Crick[A,T,C,G]\n");
 
 	FILE* methFptr = fopen(methFileName, "w");
